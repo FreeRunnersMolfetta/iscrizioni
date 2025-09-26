@@ -66,7 +66,9 @@
   </style>
 
   <!-- PayPal SDK: Hosted Button -->
-  <script src="https://www.paypal.com/sdk/js?client-id=BAAMYH70N-eYT9q0ZTtvzWgCbcfn4a4yOtgdf_v-0fVhX2-FNUrzhULvFx8OmAU7jtWQlgl30fvp15rMRw&components=hosted-buttons&disable-funding=venmo,paylater&currency=EUR"></script>
+  <script 
+  src="https://www.paypal.com/sdk/js?client-id=BAAMYH70N-eYT9q0ZTtvzWgCbcfn4a4yOtgdf_v-0fVhX2-FNUrzhULvFx8OmAU7jtWQlgl30fvp15rMRw&components=hosted-buttons&disable-funding=venmo&currency=EUR">
+</script>
 </head>
 <body>
   <div class="container">
@@ -140,9 +142,11 @@
           <!-- Hosted Button -->
           <div style="flex:1 1 260px;min-width:260px">
             <div id="paypal-container-NX3BVYW8L8MYJ"></div>
-            <script>
-              paypal.HostedButtons({ hostedButtonId: "NX3BVYW8L8MYJ" }).render("#paypal-container-NX3BVYW8L8MYJ");
-            </script>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "NX3BVYW8L8MYJ",
+  }).render("#paypal-container-NX3BVYW8L8MYJ")
+</script>
           </div>
           <a class="btn secondary" href="#faq">❓ Domande frequenti</a>
         </div>
