@@ -4,65 +4,71 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Iscrizioni · MolfettaRUN</title>
-  <meta name="description" content="Pagina ufficiale con istruzioni, moduli di iscrizione, pagamento PayPal e video tutorial per la MolfettaRUN." />
+  <meta name="description" content="Pagina ufficiale con istruzioni, moduli di iscrizione, pagamento PayPal e videopercorso per la MolfettaRUN." />
   <style>
     :root{
-      --bg:#0b1020; --card:#111731; --muted:#8ea0c9; --accent:#4dd0e1; --accent-2:#7dd3fc; --ok:#22c55e; --danger:#ef4444; --text:#eaf2ff;
+      --bg:#0b1020; --bg2:#0a0f22; --card:#111731; --muted:#8ea0c9; --accent:#4dd0e1; --accent-2:#7dd3fc; --text:#eaf2ff;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),#0e1530 40%, #0a0f22);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,"Noto Sans",sans-serif;line-height:1.55}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),#0e1530 40%, var(--bg2));color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,"Noto Sans",sans-serif;line-height:1.55}
     a{color:var(--accent)}
-    .container{max-width:1100px;margin-inline:auto;padding:28px}
-    header{display:grid;gap:10px;justify-items:center;text-align:center;padding:36px 0 10px}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    @media (min-width:768px){.container{padding:28px}}
+
+    /* Header */
+    header{display:grid;gap:14px;justify-items:center;text-align:center;padding:14px 0 20px}
     .badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #23315b;color:var(--muted);padding:6px 10px;border-radius:999px;font-size:13px;background:#0f1733}
-    h1{font-size:clamp(28px,5vw,44px);margin:6px 0 4px}
-    .subtitle{color:var(--muted);font-size:clamp(14px,2.2vw,18px)}
+    .hero{width:100%;max-width:780px;height:auto;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.25);display:block;margin:0 auto}
+    .subtitle{color:var(--muted);font-size:clamp(14px,2.2vw,18px);margin:0}
+    .notice-center{color:var(--muted);max-width:900px;margin:0 auto}
 
-    .grid{display:grid;gap:18px}
-    @media (min-width:840px){.grid{grid-template-columns:1.1fr .9fr;align-items:start}}
+    /* Layout */
+    .grid{display:grid;gap:18px;margin-top:10px}
+    @media (min-width:880px){.grid{grid-template-columns:1.1fr .9fr;align-items:start}}
 
-    .card{background:linear-gradient(180deg,#111a3a 0%, #0f1530 100%);border:1px solid #243462;border-radius:16px;padding:20px;box-shadow:0 10px 35px rgba(0,0,0,.25)}
+    /* Card */
+    .card{background:linear-gradient(180deg,#111a3a 0%, #0f1530 100%);border:1px solid #243462;border-radius:16px;padding:20px;box-shadow:0 8px 28px rgba(0,0,0,.25)}
+    @media (min-width:768px){.card{padding:24px}}
     .card h2{margin:0 0 10px;font-size:22px}
-    .steps{display:grid;gap:12px;margin-top:6px}
+
+    /* Steps */
+    .steps{display:grid;gap:14px;margin-top:8px}
     .step{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
-    .step .dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#0d1a3b;border:1px solid #2a3e6e;color:var(--accent-2);font-weight:700}
+    .dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#0d1a3b;border:1px solid #2a3e6e;color:var(--accent-2);font-weight:700}
     .muted{color:var(--muted)}
 
-    .downloads{display:grid;gap:10px}
+    /* Downloads */
+    .downloads{display:grid;gap:12px;margin-top:8px}
     @media (min-width:560px){.downloads{grid-template-columns:1fr 1fr}}
-    .dl{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:#0f1733;border:1px solid #22335e}
-    .dl b{font-size:16px}
+    .dl{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:#0f1733;border:1px solid #22335e;text-decoration:none}
+    .dl b{font-size:16px;color:var(--text)}
     .dl small{color:var(--muted)}
 
-    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+    /* Buttons */
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
     .btn{appearance:none;border:0;border-radius:12px;padding:12px 16px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
-    .btn.primary{background:linear-gradient(90deg,#2dd4bf,#22d3ee);color:#0b1020}
     .btn.secondary{background:#0f1733;color:var(--text);border:1px solid #23406b}
 
-    .notice{margin-top:10px;font-size:14px;color:var(--muted)}
+    .notice{margin-top:12px;font-size:14px;color:var(--muted)}
 
     iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:14px}
 
-    footer{color:#95a2c9;text-align:center;padding:28px 0;margin-top:18px;border-top:1px solid #1c2a53}
+    footer{color:#95a2c9;text-align:center;padding:28px 0;margin-top:24px;border-top:1px solid #1c2a53}
     .brand{font-weight:800;letter-spacing:.3px}
 
-    .tag{font-size:12px;border:1px solid #284477;border-radius:999px;padding:4px 8px;background:#0f1836;color:#aac3ff}
-
-    /* Diagnostics */
-    details#diagnostics summary{cursor:pointer}
-    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; background:#0c1533; border:1px solid #243462; border-radius:6px; padding:2px 6px}
-    pre{white-space:pre-wrap;background:#0c1533;border:1px solid #22335e;border-radius:8px;padding:10px}
+    .tag{font-size:12px;border:1px solid #284477;border-radius:999px;padding:4px 8px;background:#0f1836;color:#aac3ff;text-decoration:none}
   </style>
-  <!-- PayPal SDK: disabilito PAYLATER per evitare l'errore ncps_standalone_paylater_ineligible -->
-  <script defer src="https://www.paypal.com/sdk/js?client-id=BAAMYH70N-eYT9q0ZTtvzWgCbcfn4a4yOtgdf_v-0fVhX2-FNUrzhULvFx8OmAU7jtWQlgl30fvp15rMRw&components=hosted-buttons,buttons&disable-funding=paylater,venmo&currency=EUR"></script>
+
+  <!-- PayPal SDK: Hosted Button (PayLater disabilitato per evitare errori) -->
+  <script src="https://www.paypal.com/sdk/js?client-id=BAAMYH70N-eYT9q0ZTtvzWgCbcfn4a4yOtgdf_v-0fVhX2-FNUrzhULvFx8OmAU7jtWQlgl30fvp15rMRw&components=hosted-buttons&disable-funding=venmo,paylater&currency=EUR"></script>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="badge">🏃‍♂️ MolfettaRUN · Iscrizioni</div>
-      <h1>Come iscriversi alla MolfettaRUN</h1>
+      <img class="hero" src="https://freerunnersmolfetta.github.io/iscrizioni/header.png" alt="MolfettaRUN · Iscrizioni" />
       <p class="subtitle">Pagina ufficiale per l'iscrizione dei <b>partecipanti liberi (non FIDAL)</b> alla non competitiva <b>5 km o 10 km</b>. Per gli atleti FIDAL, usa il portale iscrizioni dedicato qui sotto.</p>
-      <p class="notice" style="text-align:center;margin:0 auto;max-width:860px">👟 Sei tesserato FIDAL? Iscriviti alla <b>CorriMolfetta</b> su iCron → 
+      <p class="notice-center">👟 Sei tesserato FIDAL? Iscriviti alla <b>CorriMolfetta</b> su iCron → 
         <a href="https://www.icron.it/newgo/#/evento/20254150" target="_blank" rel="noopener">Portale iscrizioni iCron</a>
       </p>
     </header>
@@ -76,30 +82,44 @@
             <div class="dot">1</div>
             <div>
               <b>Scarica e compila il modulo</b>
-              <p class="muted">Modulo per <b>liberi/non FIDAL</b> (5 km o 10 km). Compila tutti i campi richiesti e firma.</p>
+              <p class="muted">Scegli il modulo corretto (adulti/liberi, minori, palestra). Compila tutti i campi richiesti e firma.</p>
             </div>
           </div>
           <div class="step">
             <div class="dot">2</div>
             <div>
               <b>Paga la quota</b>
-              <p class="muted">Quota standard <b>€ 15,00</b>. <b>Promo € 13,00</b> per pagamenti effettuati entro le <b>24:00 del 6 ottobre</b>. Conserva la ricevuta.</p>
+              <p class="muted">Quota singola <b>€ 15,00</b>. <b>Promo per gruppi iscritti tramite palestra € 12,50</b>. Conserva la ricevuta.<br/>Per iscrizione in gruppi, è necessario recarsi in sede con il modulo compilato.</p>
             </div>
           </div>
           <div class="step">
             <div class="dot">3</div>
             <div>
               <b>Consegna modulo e ricevuta</b>
-              <p class="muted">Porta tutto in sede <a href="https://maps.app.goo.gl/GcRSTM8CMT2yhbte8" target="_blank" rel="noopener">Via Ten. Bufi 12</a> (18:00–20:00 lun–sab). Dal <b>14 ottobre</b> anche in <a href="https://maps.app.goo.gl/eLRTpa5ZWYCt6Mof9" target="_blank" rel="noopener">Via Termiti 20</a> (centro storico), fino al <b>26 ottobre</b>.</p>
+              <p class="muted">Porta tutto in sede: <a href="https://maps.app.goo.gl/GcRSTM8CMT2yhbte8" target="_blank" rel="noopener">Via Ten. Bufi 12</a>.<br/>📌 Orari: lun–ven <b>18:00–20:30</b> · sab <b>16:00–19:00</b>.</p>
             </div>
           </div>
         </div>
 
-        <h2 style="margin-top:18px">⬇️ Scarica il modulo</h2>
+        <h2 style="margin-top:20px">⬇️ Scarica i moduli</h2>
         <div class="downloads">
-          <a class="dl" href="moduli/Modulo-Iscrizione-Liberi-Non-FIDAL.pdf" download>
+          <a class="dl" href="https://freerunnersmolfetta.github.io/iscrizioni/Mod%20Iscriz%20MolfettaRun%202025.pdf" target="_blank" rel="noopener">
             <div>
-              <b>Modulo iscrizione · Liberi / Non FIDAL (5k · 10k)</b>
+              <b>Modulo iscrizione · Adulti / Liberi (5k · 10k)</b>
+              <div><small>PDF • Compilabile / stampabile</small></div>
+            </div>
+            <span class="tag">Download</span>
+          </a>
+          <a class="dl" href="https://freerunnersmolfetta.github.io/iscrizioni/Mod%20Iscriz%20minori%20MolfettaRun%202025.pdf" target="_blank" rel="noopener">
+            <div>
+              <b>Modulo iscrizione · Minori</b>
+              <div><small>PDF • Compilabile / stampabile</small></div>
+            </div>
+            <span class="tag">Download</span>
+          </a>
+          <a class="dl" href="https://freerunnersmolfetta.github.io/iscrizioni/Mod%20Iscriz%20palestra%20MolfettaRun%202025.pdf" target="_blank" rel="noopener">
+            <div>
+              <b>Modulo iscrizione · Palestra / Gruppi</b>
               <div><small>PDF • Compilabile / stampabile</small></div>
             </div>
             <span class="tag">Download</span>
@@ -107,59 +127,53 @@
         </div>
 
         <div class="actions">
-          <!-- Pulsante PayPal Hosted Buttons -->
+          <!-- Hosted Button -->
           <div style="flex:1 1 260px;min-width:260px">
-            <div id="paypal-container-NX3BVYW8L8MYJ" aria-live="polite"></div>
+            <div id="paypal-container-NX3BVYW8L8MYJ"></div>
+            <script>
+              paypal.HostedButtons({ hostedButtonId: "NX3BVYW8L8MYJ" }).render("#paypal-container-NX3BVYW8L8MYJ");
+            </script>
           </div>
           <a class="btn secondary" href="#faq">❓ Domande frequenti</a>
         </div>
-        <!-- Fallback visibile solo se PayPal non è disponibile o fallisce il render -->
-        <div id="paypal-fallback" class="notice" style="display:none">
-          ⚠️ Se il pulsante non appare o dà errori, usa il link diretto: 
-          <a id="paypalme-link" href="#" target="_blank" rel="noopener">Paga con PayPal.me</a> 
-          oppure paga in contanti in sede.
-        </div>
-        <p class="notice">In alternativa puoi pagare <b>in contanti</b> in <a href="https://maps.app.goo.gl/GcRSTM8CMT2yhbte8" target="_blank" rel="noopener">Via Ten. Bufi 12</a> e, dal 14 ottobre, anche in <a href="https://maps.app.goo.gl/eLRTpa5ZWYCt6Mof9" target="_blank" rel="noopener">Via Termiti 20</a> (18:00–20:00, lun–ven).</p>
+
+        <p class="notice">In alternativa puoi pagare <b>in contanti</b> in sede: <a href="https://maps.app.goo.gl/GcRSTM8CMT2yhbte8" target="_blank" rel="noopener">Via Ten. Bufi 12</a> · lun–ven <b>18:00–20:30</b> · sab <b>16:00–19:00</b>.</p>
       </section>
 
       <!-- Colonna destra: Video + Info -->
       <aside class="card">
-        <h2>🎥 Video tutorial</h2>
-        <!-- Sostituisci l'URL di YouTube con il tuo -->
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0" title="Tutorial iscrizione MolfettaRUN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <p class="notice">Inserisci qui l'ID del tuo video YouTube (es. https://www.youtube.com/watch?v=<b>VIDEO_ID</b>).</p>
+        <h2>🎥 Videopercorso ufficiale</h2>
+        <iframe src="https://www.youtube.com/embed/f6eYovJbbwc?rel=0" title="Videopercorso MolfettaRUN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-        <h2 style="margin-top:18px">ℹ️ Info rapida</h2>
-        <ul class="muted" style="margin:0 0 6px 18px">
+        <h2 style="margin-top:20px">ℹ️ Info rapida</h2>
+        <ul class="muted" style="margin:0 0 8px 18px">
           <li>Data gara: <b>19 ottobre 2025</b></li>
-          <li>Quote: <b>€ 15</b> (promo <b>€ 13</b> fino al <b>6 ottobre, h 24:00</b>)</li>
-          <li>Ritiro pacco gara:
+          <li>Quote: <b>Quota singola € 15,00</b> · <b>Promo gruppi palestre € 12,50</b></li>
+          <li>Iscrizioni e consegna moduli: <b>Via Ten. Bufi 12</b>
             <ul>
-              <li>Dal 14 al 25 ottobre: <b>Via Termiti 20</b> · 10:00–18:00</li>
-              <li>Sab 26 ottobre: <b>Via Termiti 20</b> · 09:00–13:00</li>
-              <li>Giorno gara: vicino partenza · 08:00–09:00</li>
+              <li>lun–ven: <b>18:00–20:30</b></li>
+              <li>sab: <b>16:00–19:00</b></li>
             </ul>
           </li>
-          <li>Consegna moduli: <b>Via Ten. Bufi 12</b> (18–20 lun–sab) e <b>Via Termiti 20</b> dal 14/10</li>
           <li>Contatti: <b>freerunnersmolfetta05@gmail.com</b> · WhatsApp <b>351 2246242</b> · Info <b>346 0184987</b></li>
         </ul>
         <p class="notice">Per atleti FIDAL: iscrizioni su <a href="https://www.icron.it/newgo/#/evento/20254150" target="_blank" rel="noopener">iCron</a>.</p>
       </aside>
     </div>
 
-    <section id="faq" class="card" style="margin-top:18px">
+    <section id="faq" class="card" style="margin-top:20px">
       <h2>FAQ · Domande frequenti</h2>
-      <details>
-        <summary>Chi può iscriversi a questa pagina?</summary>
-        <p class="muted">Questa pagina è dedicata ai <b>partecipanti liberi</b> (non tesserati FIDAL) per la non competitiva 5 km o 10 km. Gli atleti FIDAL si iscrivono su iCron alla CorriMolfetta.</p>
+      <details open>
+        <summary>Chi può iscriversi a questa manifestazione?</summary>
+        <p class="muted">Questa pagina è dedicata alle iscrizioni per la manifestazione <b>NON COMPETITIVA</b> di <b>5 km</b> o <b>10 km</b>, aperta ai partecipanti <b>liberi (non tesserati FIDAL)</b>. Gli atleti FIDAL possono iscriversi alla <b>CorriMolfetta</b> su iCron a questo link: <a href="https://www.icron.it/newgo/#/evento/20254150" target="_blank" rel="noopener">Portale iCron</a>.</p>
       </details>
       <details>
         <summary>Quali sono le modalità di pagamento?</summary>
-        <p class="muted">Online con <b>Carta/PayPal</b> tramite il pulsante in pagina, oppure <b>contanti</b> in sede (Via Ten. Bufi 12 e, dal 14 ottobre, Via Termiti 20) negli orari indicati.</p>
+        <p class="muted">Online con <b>Carta/PayPal</b> tramite il pulsante in pagina, oppure <b>contanti</b> in sede (<b>Via Ten. Bufi 12</b>) negli orari indicati.</p>
       </details>
       <details>
         <summary>Quando e dove ritiro pettorale, pacco gara e maglietta?</summary>
-        <p class="muted">Presso <b>Via Termiti 20</b> dal 14 al 25 ottobre (10–18) e sabato 26 ottobre (09–13). Il giorno della gara ritiro vicino alla partenza (08–09).</p>
+        <p class="muted">I dettagli aggiornati sul ritiro pettorale e pacco gara saranno comunicati sui canali ufficiali dell'evento.</p>
       </details>
       <details>
         <summary>Quali documenti devo portare per il ritiro?</summary>
@@ -167,102 +181,14 @@
       </details>
     </section>
 
-    <!-- DIAGNOSTICA / TEST CASES -->
-    <section class="card" style="margin-top:18px">
-      <h2>🔧 Diagnostica pagamento (test)</h2>
-      <p class="muted">Questi test aiutano a capire se il bottone PayPal è idoneo nell'ambiente corrente. Non influenzano il pagamento reale.</p>
-      <div class="actions">
-        <button id="run-tests" class="btn secondary" type="button">Esegui test</button>
-        <span class="kbd">currency=EUR</span>
-        <span class="kbd">disable-funding=paylater,venmo</span>
-        <span class="kbd">components=hosted-buttons,buttons</span>
-      </div>
-      <pre id="test-log">Premi "Esegui test" per avviare…</pre>
-      <details id="diagnostics">
-        <summary>Dettagli tecnici</summary>
-        <ul class="muted" style="margin-left:18px">
-          <li>Controllo presenza SDK</li>
-          <li>Verifica idoneità PayPal Pay Later (deve risultare <b>non idoneo</b> o disabilitato)</li>
-          <li>Tentativo di render HostedButtons con catch degli errori</li>
-          <li>Attivazione fallback link in caso di errore</li>
-        </ul>
-      </details>
-    </section>
-
     <footer>
       <div class="brand">MolfettaRUN</div>
       <div class="muted">Questa è una pagina statica informativa. Aggiorna sempre con le indicazioni ufficiali dell'organizzazione.</div>
+      <div style="margin-top:10px">
+        <a href="https://facebook.com/FreeRunnersMolfetta/" target="_blank" rel="noopener" class="tag">🔵 Facebook · FreeRunnersMolfetta</a>
+        <a href="https://instagram.com/freerunnersmolfetta/" target="_blank" rel="noopener" class="tag" style="margin-left:6px">🟣 Instagram · @freerunnersmolfetta</a>
+      </div>
     </footer>
   </div>
-
-  <noscript>
-    <div style="background:#fffae5;color:#111;padding:12px 16px;margin:16px;border-radius:10px;border:1px solid #e2d38b">
-      Per effettuare il pagamento online abilita JavaScript oppure usa il link alternativo PayPal.me (se disponibile) o paga in contanti in sede.
-    </div>
-  </noscript>
-
-  <script>
-    // Configura QUI un eventuale link di fallback PayPal.me
-    const PAYPAL_ME_URL = "#"; // es. "https://paypal.me/TUOACCOUNT/13"
-
-    function log(line){
-      const el = document.getElementById('test-log');
-      el.textContent += (el.textContent ? "\n" : "") + line;
-    }
-    function showFallback(reason){
-      const fb = document.getElementById('paypal-fallback');
-      const a = document.getElementById('paypalme-link');
-      if (PAYPAL_ME_URL && PAYPAL_ME_URL !== '#') a.href = PAYPAL_ME_URL; else a.removeAttribute('href');
-      fb.style.display = 'block';
-      if (reason) log('Fallback attivato: ' + reason);
-    }
-
-    async function renderHostedButton(){
-      try{
-        if (!window.paypal) { showFallback('SDK PayPal non presente'); return; }
-        if (paypal.HostedButtons) {
-          await paypal.HostedButtons({ hostedButtonId: 'NX3BVYW8L8MYJ' }).render('#paypal-container-NX3BVYW8L8MYJ');
-          // Se render ok, nascondo fallback
-          document.getElementById('paypal-fallback').style.display = 'none';
-          log('HostedButtons render: OK');
-          return;
-        }
-        // Se HostedButtons non c'è, provo a valutare idoneità funding (diagnostica)
-        if (paypal.Buttons && paypal.FUNDING && paypal.isFundingEligible) {
-          const eligiblePayLater = paypal.isFundingEligible(paypal.FUNDING.PAYLATER);
-          log('Pay Later eligible: ' + eligiblePayLater);
-        }
-        showFallback('HostedButtons non disponibile');
-      }catch(err){
-        console.error(err);
-        // Gestione specifica dell'errore ncps_standalone_paylater_ineligible
-        if (String(err && err.message).includes('ncps_standalone_paylater_ineligible')) {
-          log('Errore rilevato: ncps_standalone_paylater_ineligible → PAYLATER disabilitato via SDK params.');
-        } else {
-          log('Errore render HostedButtons: ' + (err && (err.message || err.toString())));
-        }
-        showFallback('Errore PayPal: vedi console');
-      }
-    }
-
-    // Test runner
-    document.getElementById('run-tests').addEventListener('click', async () => {
-      document.getElementById('test-log').textContent = '';
-      log('Inizio test…');
-      log('SDK caricato: ' + (!!window.paypal));
-      if (window.paypal && paypal.FUNDING && paypal.isFundingEligible) {
-        try{
-          log('PAYLATER eligible (atteso: false o disabilitato): ' + paypal.isFundingEligible(paypal.FUNDING.PAYLATER));
-        }catch(e){ log('Check PAYLATER fallito: ' + e); }
-      } else {
-        log('API Buttons non disponibile per funding check (ok).');
-      }
-      await renderHostedButton();
-      log('Test completo.');
-    });
-
-    // Render al load
-    window.addEventListener('load', renderHostedButton);
-  </script>
 </body>
 </html>
