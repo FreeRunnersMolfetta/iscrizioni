@@ -9,18 +9,24 @@
     :root{
       --bg:#0b1020; --bg2:#0a0f22; --card:#111731; --muted:#8ea0c9; --accent:#4dd0e1; --accent-2:#7dd3fc; --text:#eaf2ff;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,var(--bg),#0e1530 40%, var(--bg2));color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,"Noto Sans",sans-serif;line-height:1.55}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{background:linear-gradient(180deg,var(--bg),#0e1530 40%, var(--bg2));color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,"Noto Sans",sans-serif;line-height:1.55}
     a{color:var(--accent)}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .container{max-width:1100px;margin:0 auto;padding:20px;text-align:left}
     @media (min-width:768px){.container{padding:28px}}
 
     /* Header */
     header{display:grid;gap:14px;justify-items:center;text-align:center;padding:14px 0 20px}
     .badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #23315b;color:var(--muted);padding:6px 10px;border-radius:999px;font-size:13px;background:#0f1733}
     .hero{width:100%;max-width:780px;height:auto;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.25);display:block;margin:0 auto}
-    .subtitle{color:var(--muted);font-size:clamp(14px,2.2vw,18px);margin:0}
+    .subtitle{color:var(--muted);font-size:clamp(14px,2.2vw,18px)}
     .notice-center{color:var(--muted);max-width:900px;margin:0 auto}
+
+    /* Social top */
+    .social-top{display:flex;gap:14px;justify-content:center;margin-top:6px}
+    .social-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none;font-size:15px}
+    .social-fb{background:#1877f2;color:#fff}
+    .social-ig{background:#d6249f;color:#fff}
 
     /* Layout */
     .grid{display:grid;gap:18px;margin-top:10px}
@@ -59,13 +65,17 @@
     .tag{font-size:12px;border:1px solid #284477;border-radius:999px;padding:4px 8px;background:#0f1836;color:#aac3ff;text-decoration:none}
   </style>
 
-  <!-- PayPal SDK: Hosted Button (PayLater disabilitato per evitare errori) -->
+  <!-- PayPal SDK: Hosted Button -->
   <script src="https://www.paypal.com/sdk/js?client-id=BAAMYH70N-eYT9q0ZTtvzWgCbcfn4a4yOtgdf_v-0fVhX2-FNUrzhULvFx8OmAU7jtWQlgl30fvp15rMRw&components=hosted-buttons&disable-funding=venmo,paylater&currency=EUR"></script>
 </head>
 <body>
   <div class="container">
     <header>
       <div class="badge">🏃‍♂️ MolfettaRUN · Iscrizioni</div>
+      <div class="social-top">
+        <a class="social-btn social-fb" href="https://facebook.com/FreeRunnersMolfetta/" target="_blank" rel="noopener">🔵 Facebook</a>
+        <a class="social-btn social-ig" href="https://instagram.com/freerunnersmolfetta/" target="_blank" rel="noopener">🟣 Instagram</a>
+      </div>
       <img class="hero" src="https://freerunnersmolfetta.github.io/iscrizioni/header.png" alt="MolfettaRUN · Iscrizioni" />
       <p class="subtitle">Pagina ufficiale per l'iscrizione dei <b>partecipanti liberi (non FIDAL)</b> alla non competitiva <b>5 km o 10 km</b>. Per gli atleti FIDAL, usa il portale iscrizioni dedicato qui sotto.</p>
       <p class="notice-center">👟 Sei tesserato FIDAL? Iscriviti alla <b>CorriMolfetta</b> su iCron → 
@@ -182,8 +192,8 @@
     </section>
 
     <footer>
-      <div class="brand">Free Runners Molfetta</div>
-      <div class="muted">2025 @ Tutti i diritti riservati.</div>
+      <div class="brand">MolfettaRUN</div>
+      <div class="muted">Questa è una pagina statica informativa. Aggiorna sempre con le indicazioni ufficiali dell'organizzazione.</div>
       <div style="margin-top:10px">
         <a href="https://facebook.com/FreeRunnersMolfetta/" target="_blank" rel="noopener" class="tag">🔵 Facebook · FreeRunnersMolfetta</a>
         <a href="https://instagram.com/freerunnersmolfetta/" target="_blank" rel="noopener" class="tag" style="margin-left:6px">🟣 Instagram · @freerunnersmolfetta</a>
@@ -192,4 +202,3 @@
   </div>
 </body>
 </html>
-
